@@ -1,4 +1,27 @@
-function trapz 0
-
-
+function trapz 4
+	// lendo x2 e x1 e subtrai eles
+	push argument 2
+	push argument 0
+	sub 
+	// salva em local 0 o resultado da subtração
+	pop local 0
+	// lendo y1 e y2 e soma eles
+	push argument 1
+	push argument 3
+	add
+	// salva em local 1 o valor da soma
+	pop local 1
+	// chamando os resutados parciais para o produto
+	push local 0
+	push local 1
+	call mult 2
+	// salva em local 2 o resultado do produto
+	pop local 2
+	// invoca o resultado do produto e escreve a constante 2 
+	push local 2
+	push constant 2
+	call div 2
+	// salva o resultado da divisão em temp 0 e retorna ela
+	pop temp 0
+	push temp 0 
 	return
