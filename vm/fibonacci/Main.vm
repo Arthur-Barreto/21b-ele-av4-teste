@@ -3,8 +3,35 @@
 
 function Main.main 0
 
-
-
+// inicializando a sequencia com os dois primeiros termos
+push constant 0 
+push constant 1
+// inicializando o contador com 2
+push constant 2
+pop temp 0
+// loop fibonnaci
+label loop
+// pop pega os dados da pilha
+pop temp 1
+pop temp 2
+// devemos devolver na mesma ordem que pegamos
+push temp 2
+push temp 1
+// votlamos a estaca zero, agora colocamos de novo e somamos
+push temp 1
+push temp 2
+add
+// le o valor do contador e soma 1 nele
+push temp 0
+push constant 1
+add
+// le o valor do contador e compara com a constante 11
+pop temp 0
+push temp 0
+push constant 11
+// se contador < 11, volta para o loop
+lt
+if-goto loop
 // nao deve tirar isso!
 label while2
     goto while2
